@@ -87,6 +87,7 @@ section .infos {
   /* ? Work of flex grow is to occupy the space in the parent */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  /*  * to distrubte space evenly in the board  */
   grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
 }
 .block {
