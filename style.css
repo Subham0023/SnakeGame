@@ -10,6 +10,8 @@ body {
   width: 100%;
 }
 
+/* ? Using root makes the code more a bit clean and tends us to follow a universal convention */
+
 :root {
   /* * Background Color */
   --bg-primary-color: #0d0d0d;
