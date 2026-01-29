@@ -84,12 +84,11 @@ section .infos {
 }
 
 .board {
-  border: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
   flex-grow: 1;
   /* ? Work of flex grow is to occupy the space in the parent */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
-  /*  * to distrubte space evenly in the board  */
   grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
 }
 .block {
