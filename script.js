@@ -5,6 +5,8 @@ const blockWidth = 80;
 const cols = Math.floor(board.clientWidth / blockWidth);
 const rows = Math.floor(board.clientHeight / blockHeight);
 
+const blocks = [];
+
 // for (let i = 0; i < cols * rows; i++) {
 //   const block = document.createElement("div");
 //   block.classList.add("block");
@@ -17,5 +19,6 @@ for (let row = 0; row < rows; row++) {
     block.classList.add("block");
     board.appendChild(block);
     block.innerText = `${row}--${col}`;
+    blocks[`${row}-${col}`] = block;
   }
 }
