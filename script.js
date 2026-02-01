@@ -1,6 +1,6 @@
 const board = document.querySelector(".board");
-const blockHeight = 80;
-const blockWidth = 80;
+const blockHeight = 50;
+const blockWidth = 50;
 
 const cols = Math.floor(board.clientWidth / blockWidth);
 const rows = Math.floor(board.clientHeight / blockHeight);
@@ -18,7 +18,6 @@ for (let row = 0; row < rows; row++) {
     const block = document.createElement("div");
     block.classList.add("block");
     board.appendChild(block);
-    block.innerText = `${row}--${col}`;
     blocks[`${row}-${col}`] = block;
   }
 }
