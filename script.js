@@ -7,6 +7,12 @@ const rows = Math.floor(board.clientHeight / blockHeight);
 
 const blocks = [];
 
+const snake = [
+  { x: 1, y: 3 },
+  { x: 1, y: 4 },
+  { x: 1, y: 5 },
+];
+
 // for (let i = 0; i < cols * rows; i++) {
 //   const block = document.createElement("div");
 //   block.classList.add("block");
