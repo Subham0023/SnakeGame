@@ -7,10 +7,14 @@ const rows = Math.floor(board.clientHeight / blockHeight);
 
 const blocks = [];
 
+let direction = "down";
+
+let intervalId = null;
+
 const snake = [
   { x: 1, y: 3 },
-  { x: 1, y: 4 },
-  { x: 1, y: 5 },
+  // { x: 1, y: 4 },
+  // { x: 1, y: 5 },
 ];
 
 // for (let i = 0; i < cols * rows; i++) {
@@ -27,3 +31,51 @@ for (let row = 0; row < rows; row++) {
     blocks[`${row}-${col}`] = block;
   }
 }
+
+// * Works is to show the snake
+function render() {
+  snake.forEach((segment) => {
+    blocks[`${segment.x}-${segment.y}`].classList.add("fill");
+  });
+}
+
+intervalId = setInterval(() => {
+  let head = null;
+
+  if (direction === "left") {
+    head = { x: snake[0].x, y: snake[0].y - 1 };
+  } else if (direction === "right") {
+    head = { x: snake[0].x, y: snake[0].y + 1 };
+  } else if (direction === "down") {
+    head = { x: snake[0].x + 1, y: snake[0].y };
+  } else if (direction === "up") {
+    head = { x: snake[0].x - 1, y: snake[0].y };
+  }
+
+  if (head.x < 0 || head.x >= rows || head.y < 0 || head.y >= cols) {
+    alert("Game Over");
+    clearInterval(intervalId);
+  }
+
+  snake.forEach((segment) => {
+    blocks[`${segment.x}-${segment.y}`].classList.remove("fill");
+  });
+
+  // ? unshift basically appends the element into the first of the given array
+  snake.unshift(head);
+  snake.pop();
+
+  render();
+}, 400);
+
+addEventListener("keydown", (event) => {
+  if (event.key == "ArrowLeft") {
+    direction = "left";
+  } else if (event.key == "ArrowRight") {
+    direction = "right";
+  } else if (event.key == "ArrowDown") {
+    direction = "down";
+  } else if (event.key == "ArrowUp") {
+    direction = "up";
+  }
+});
