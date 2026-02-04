@@ -16,6 +16,7 @@ body {
   /* * Background Color */
   --bg-primary-color: #0d0d0d;
   --bg-fill-color: #fffbfb;
+  --bg-food-color: #ff3b3b;
 
   /* *Text Color */
   --text-primary-color: #fffbfb;
@@ -100,4 +101,8 @@ section .infos {
 
 .fill {
   background-color: var(--bg-fill-color);
+}
+
+.food {
+  background-color: var(--bg-food-color);
 }

@@ -11,6 +11,11 @@ let direction = "down";
 
 let intervalId = null;
 
+let food = {
+  x: Math.floor(Math.random() * rows),
+  y: Math.floor(Math.random() * cols),
+};
+
 const snake = [
   { x: 1, y: 3 },
   // { x: 1, y: 4 },
